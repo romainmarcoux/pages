@@ -1,0 +1,18 @@
+<html><head><title></title>
+<meta charset="UTF-8">
+<style>
+.style, .style th, .style td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-style: solid;
+}
+</style>
+</head><body>
+<script> function trierTable(colIndex) { const table = document.getElementById("tab"); const tbody = table.querySelector("tbody"); const lignes = Array.from(tbody.querySelectorAll("tr")); const asc = table.classList.toggle("asc"); lignes.sort((a, b) => { let valA = a.children[colIndex].textContent; let valB = b.children[colIndex].textContent; let numA = parseFloat(valA); let numB = parseFloat(valB); if (!isNaN(numA) && !isNaN(numB)) { return asc ? numA - numB : numB - numA; } else { return asc ? valA.localeCompare(valB) : valB.localeCompare(valA); } });tbody.innerHTML = ""; lignes.forEach(tr => tbody.appendChild(tr)); } </script>
+<table id="tab" class="style">
+<thead><tr><th onclick="trierTable(0)">Number of malicious IP addresses ↓↑</th><th onclick="trierTable(1)">Percentage of malicious IPs out of the total ↓↑</th><th onclick="trierTable(2)">AS Number ↓↑</th><th onclick="trierTable(3)">Organization ↓↑</th><th onclick="trierTable(4)">Country ↓↑</th><th onclick="trierTable(5)">Registration date ↓↑</th><th onclick="trierTable(6)">Total number of IP addresses for the AS ↓↑</th><th onclick="trierTable(7)">Proportion of malicious IPs ↓↑</th></tr></thead><tbody>
+
+tmp1
+</tbody></table>
+</body></html>
